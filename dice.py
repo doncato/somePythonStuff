@@ -5,12 +5,12 @@ max = 6
 again = "yes"
 
 while again == "yes" or again == "y":
-	print "..."
-	print "Würfel1:"
-	print random.randint(min, max)
-	print "Würfel2:"
-	print random.randint(min, max)
+	print ("...")
+	print ("Dice1:")
+	print (random.randint(min, max))
+	print ("Dice2:")
+	print (random.randint(min, max))
 	
-	again = raw_input("Repeat?")
+	again = input("Repeat?")
 
 	
