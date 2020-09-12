@@ -5,3 +5,4 @@ Maybe someone wants to say something about it, or get's inspired by it, I don't 
 
 # Overview of Content:
 -calc.py = very basic calculator
+-mastermind.py = Mastermind game
