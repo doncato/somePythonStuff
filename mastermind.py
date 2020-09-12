@@ -96,8 +96,8 @@ while gameStatus == 0:
     else:
         # Tell the number of 'correctness'
         valueCounterCalc = valueCounter - correctCounter
-        print('You guessed the right Numbers', valueCounterCalc, 'times.')
-        print('Your guessed the right Positions ', correctCounter, ' times.')
+        print(valueCounterCalc, ' of your guessed numbers, append in the correct code, but in other postions.')
+        print('You guessed additional ', correctCounter, ' numbers with their position right.')
 
 
 if gameStatus == 1:
