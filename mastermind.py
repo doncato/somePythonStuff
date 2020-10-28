@@ -1,14 +1,11 @@
 # Author: doncato
 # Description: Mastermind Game
 # mastermind.py
-
-import random
-import time
-
+import random, time
 # Variables
 # 0 - none, 1 - 1 Player, 2 - 2 Players
 playMode = 0
-check = ('1', '2', '3', '4', '5', '6')
+check = (1, 2, 3, 4, 5, 6)
 guesses = 0
 checkInput = True
 # 0 - running, 1 - Out of guesses, 2 - Guessed correctly
@@ -33,19 +30,17 @@ if playMode == 1:
     C3 = random.randint(1, 6)
     C4 = random.randint(1, 6)
 if playMode == 2:
-    print('Player 1, please enter your code. Please make sure to hide it from Player 2\nEnter 4 numbers from 1 to 6')
-    while C1 not in check:
-        C1 = input('Enter digit number 1 >')
-    while C2 not in check:
-        C2 = input('Enter digit number 2 >')
-    while C3 not in check:
-        C3 = input('Enter digit number 3 >')
-    while C4 not in check:
-        C4 = input('Enter digit number 4 >')
-    C1 = int(C1)
-    C2 = int(C2)
-    C3 = int(C3)
-    C4 = int(C4)
+    print('Player 1, please enter your code. Please make sure to hide it from Player 2')
+    while True:
+        C1, C2, C3, C4 = input('Enter 4 numbers from 1 to 6 separated by a space.\n >').split()
+        C1 = int(C1)
+        C2 = int(C2)
+        C3 = int(C3)
+        C4 = int(C4)
+        if C1 in check and C2 in check and C3 in check and C4 in check:
+            break
+        else:
+            print('Numbers are not valid')
     print('The code you entered was: ', C1, C2, C3, C4)
     time.sleep(5)
     print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPlayer 1, please resize the window, to avoid that Player 2 could see the code\nIf you are done, tell Player 2, she/he can start')
@@ -90,14 +85,14 @@ while gameStatus == 0:
     if correctCounter == 4:
         print('The combination you entered is equal to the code, congrats!')
         gameStatus = 2
-    if guesses == 7:
+    elif guesses == 7:
         print('Out of guesses')
         gameStatus = 1
     else:
         # Tell the number of 'correctness'
         valueCounterCalc = valueCounter - correctCounter
-        print(valueCounterCalc, ' of your guessed numbers, append in the correct code, but in other postions.')
-        print('You guessed additional ', correctCounter, ' numbers with their position right.')
+        print('You guessed the right Numbers', valueCounterCalc, 'times.')
+        print('Your guessed the Numbers within their right Positions ', correctCounter, ' times.')
 
 
 if gameStatus == 1:
